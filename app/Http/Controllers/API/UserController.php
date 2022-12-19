@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Http;
 
 
 use App\Models\AudioModel;
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
@@ -128,6 +129,7 @@ class UserController extends Controller
             }
 
         } catch (\Throwable $th) {
+            Log::error(json_encode($th));
             DB::rollBack();
             return response()->json([
                 'status' => false,
