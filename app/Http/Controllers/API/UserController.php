@@ -92,12 +92,12 @@ class UserController extends Controller
         // handle single file 
         try {
             DB::beginTransaction();  
-            if($request->hasFile('audio')){
+            if($request->hasFile('file')){
                 // preparation audio
                 $uniqueid=uniqid();
                 // $original_name=$request->file('audio')->getClientOriginalName();
                 // $size=$request->file('audio')->getSize();
-                $extension=$request->file('audio')->getClientOriginalExtension();
+                $extension=$request->file('filie')->getClientOriginalExtension();
                 $filename=Carbon::now()->format('Ymd').'_'.'ringkas'.'_'.$uniqueid.'.'.$extension;
                 
                 // preparation upload audio to google bucket
