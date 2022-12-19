@@ -18,7 +18,7 @@ use App\Http\Controllers\API\UserController;
 Route::post('login', [AuthController::class, 'login'])->name('login');
 Route::get('welcome', [AuthController::class, 'welcome'])->name('welcome');
 Route::get('reject', [AuthController::class, 'reject'])->name('reject');
-Route::group(['middleware' => ['auth:sanctum']], function () {
+// Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('logout', [AuthController::class, 'logout']);
     Route::get('profile/{id}', [AuthController::class, 'profile']);
 
@@ -26,4 +26,4 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('transkip', [UserController::class, 'hitYou']); // untuk get summary dari nisa
     Route::post('submit', [UserController::class, 'submit']); // untuk menyimpan semua data ke db
     Route::post('delete', [UserController::class, 'delete']); // untuk menghapus audio dari google bucket
-});
+// });

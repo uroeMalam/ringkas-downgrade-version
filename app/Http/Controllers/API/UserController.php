@@ -78,7 +78,7 @@ class UserController extends Controller
     {
         // validation
         $validate = $this->validate($request, [
-            'audio' =>'nullable|file|mimes:audio/mpeg,mpga,mp3,wav,aac'
+            'audio' =>'nullable|file|mimes:audio/wav'
         ]); 
 
         if (!$validate) {
